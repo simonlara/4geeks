@@ -1,0 +1,33 @@
+.left{
+    float: left;
+    }
+    .right{
+        float: right;
+    }
+    .cajaimagen{
+        text-align:center;
+            width: 100%;
+    
+    }
+    .caja{
+    width: 60%;
+        }
+    body{
+    background-color: lightgray;
+    }
+    .fondoblanco{
+        background-color: white;
+        display: inline-block;
+        margin: 20px
+    }
+    span{
+    margin: 2%;
+    
+    }
+    div{
+        border-bottom:1px solid rgb(187, 181, 181);
+    }
+    p{
+        text-align: left;
+         padding: 2%     
+    }
