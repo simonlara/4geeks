@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="validator.css">
+</head>
+
+<body>
+
+    <div style=" margin:5%" class="card text-left">
+        <form  id="form" action='' method="POST">
+            <div class="card-header">
+                <h1>Payment</h1>
+            </div>
+            <div class="card-body">
+
+                <div id="alerta" class="alert alert-danger noMostrar" role="alert">
+                    This is a danger alert—check it out!
+                </div>
+                <div class="row">
+                    <div class="form-group col-4">
+                        <label for="card">Card#</label>
+                        <input pattern="\d*" minlength="16" maxlength="16" type="text" class="form-control" id="card"
+                            aria-describedby="emailHelp" placeholder="xxxxxxxxxxxxxxxx" required name="creditcard" >
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="cvc">CVC#</label>
+                        <input pattern="\d*" minlength="3" maxlength="3" type="text" class="form-control" id="cvc"
+                            placeholder="000" required >
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="amount">Amount</label>
+                        <div class="form-group row ">
+                            <label style="text-align: right" for="amount"
+                                class="col-1 col-form-label"><strong>$</strong></label>
+                            <input pattern="\d*" type="text" class="form-control col-11" id="amount"
+                                placeholder="Amount" required >
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="first">First name</label>
+                        <input type="text" class="form-control" id="first" required >
+                    </div>
+                    <div class="form-group col-6">
+                        <label for="last">Last name</label>
+                        <input type="text" class="form-control" id="last" required > 
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" id="city" required >
+                    </div>
+                    <div class="form-group col-3">
+                        <label for="State">State</label>
+                        <select class="custom-select" required >
+
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-3">
+                        <label for="postcode">Post code</label>
+                        <input pattern="\d*" type="text" class="form-control" id="postcode" required >
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="form-group col-3">
+                        <label for="weacept ">We acept:</label>
+                        <div style="background-color: gray" class="form-group "  >
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" required name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1">
+                                <label class="form-check-label" for="inlineRadio1"><i
+                                        class="fab fa-cc-visa"></i></label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1">
+                                <label class="form-check-label" for="inlineRadio1"><i
+                                        class="fab fa-cc-mastercard"></i></label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1">
+                                <label class="form-check-label" for="inlineRadio1"><i
+                                        class="fab fa-cc-diners-club"></i></label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                                    value="option1">
+                                <label class="form-check-label" for="inlineRadio1"><i
+                                        class="fab fa-cc-amex"></i></label>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <div class="col-6 offset-md-3">
+                        <label for="message">Message</label>
+                        <textarea id="messaje" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="card-footer text-muted">
+                <div style="text-align: right">
+                    <button class="btn btn-secondary" type="reset">Cancel</button>
+                    <button id="enviar" class="btn btn-primary" type="submit">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script type="text/javascript" src="validator.min.js"></script>
+
+        <script  src="./validator.js" ></script>
+</body>
+
+</html>
