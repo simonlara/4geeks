@@ -7,7 +7,7 @@ form.addEventListener('submit',(e)=>{
     console.log("Submit");
    
     let messaje=document.getElementById('messaje');
-    if (messaje.value=="" || validator.isLowercase('holA')==false){
+    if (messaje.value=="" || validator.isLowercase(messaje.value)){
         let alerta = document.getElementById('alerta');
     
         alerta.classList.add('mostrar');

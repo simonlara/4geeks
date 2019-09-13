@@ -1,0 +1,58 @@
+.carta{
+    margin: 10px auto;
+    width: 20%;
+    
+    
+
+}
+.otra{
+    height: 88px;
+    width: 62px;
+    border: black solid;
+    margin: 5px;
+    border-radius: 5%;
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+}
+.test::before{
+    position: absolute;
+    left: 50px;
+    top: 10px;
+    font-size: 100px
+}
+.test::after{
+    position: absolute;
+    right: 50px;
+    bottom: 10px;
+    font-size: 100px;
+    transform: scale(1, -1);
+}
+.test.picas, .test.trebol {
+    color: black;
+}
+.test.corazon, .test.diamante {
+    color: red;
+}
+.corazon::before, .corazon::after{
+    content: 	'\2665';
+    color: red;
+}
+.picas::before, .picas::after{
+    content: 	'\2660';
+    color: black;
+}
+.trebol::before, .trebol::after{
+    content: 	'\2663';
+    color: black;
+}
+.diamante::before, .diamante::after{
+    content: 	'\2666';
+    color: red;
+}
+.test{
+    font-size: 200px
+}
