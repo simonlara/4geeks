@@ -5,6 +5,7 @@ let sort = document.getElementById('sort');
 let showDraw = document.getElementById('showDraw');
 let showSort = document.getElementById('showSort');
 let carta = document.getElementById('carta');
+let bubble = document.getElementById('bubble');
 
 let array=[];
 
@@ -17,7 +18,10 @@ draw.addEventListener('click', (e) => {
 
     for (let i = 0; i < cantCard.value; i++) {
         let numero = Math.floor(Math.random() * 13 + 1);
+       
         arreglo.push(numero);
+
+        numero==1?numero="A":numero==11?numero="J":numero==12?numero="Q":numero==13?numero="K":numero;
 
         let span = document.createElement('div');
         span.classList.add('otra');
@@ -58,18 +62,27 @@ const bubbleSort = (arr) => {
 
             
             for (let i=0;i<arr.length;i++){
+                let nuevo= arr[i];
+                nuevo==1?nuevo="A": nuevo==11?nuevo="J": nuevo==12?nuevo="Q": nuevo==13?nuevo="K":nuevo;
                 
-               let numero=`<span class="otra"  >${arr[i]}</span>`;
+               let numero=`<span class="otra"  >${nuevo}</span>`;
 
-
+                
                 log.innerHTML+= numero
             };
             
            
-            
-            
+           
             
             div.appendChild(log);
+            //let nuevoArr= arr;
+ 
+         //  let nuevo= log.indexOf(1);
+           //console.log(nuevo);
+           // nuevoArr[nuevo]='A';
+           // console.log(nuevoArr[nuevo])
+            
+            
             showSort.appendChild(div);
             
 
@@ -78,7 +91,7 @@ const bubbleSort = (arr) => {
         }
         wall--; //decrease the wall for optimization
     }
-
+          
     return arr;
 
 };
@@ -86,8 +99,10 @@ const bubbleSort = (arr) => {
 
 sort.addEventListener('click', () => {
     bubbleSort(array)
+    
 });
 
-
+let cambio=showDraw.innerHTML.replace(1,"A");
+document.getElementById("showDraw").innerHTML = cambio;
 
 
